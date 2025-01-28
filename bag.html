@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eco Tote Bag</title>
+    <link rel="stylesheet" href="items.css">
+    <script src="https://cdn.snipcart.com/themes/v3.4.0/default/snipcart.js"></script>
+    <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.4.0/default/snipcart.css" />
+    <div id="snipcart" data-api-key="MjhjYTAzOTktMTgwNC00ZDdhLWJmNmYtOGRjOWVmMDAwNTE2NjM4NzAwNDk3MDU3MzI5MzE0"></div>
+</head>
+
+<body>
+    <button class="snipcart-checkout"
+        style="background-color: transparent; border: none; position: absolute; top: 20px; right: 50px; width: 5%; height: 5%; cursor: pointer;">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+            <path
+                d="M351.9 329.506H206.81l-3.072-12.56H368.16l26.63-116.019-217.23-26.04-9.952-58.09h-50.4v21.946h31.894l35.233 191.246a32.927 32.927 0 1 0 36.363 21.462h100.244a32.825 32.825 0 1 0 30.957-21.945zM181.427 197.45l186.51 22.358-17.258 75.195H198.917z"
+                data-name="Shopping Cart" />
+        </svg>
+        <nobr><span class="snipcart-total-price"></span>
+            (<span class="snipcart-items-count"></span>)
+    </button></nobr>
+    <div class="container">
+        <!-- Linke Spalte: Slideshow -->
+        <div class="image-container">
+            <h1>Eco Tote Bag</h1>
+            <div class="slideshow" id="slideshow-black" style="display: block;">
+                <img src="img\bag\black\eco-tote-bag-black-front-6763ff172415c.jpg" alt="Black Product 1"
+                    class="active">
+                <img src="img\bag\black\eco-tote-bag-black-product-details-6763ff17240cf.jpg" alt="Black Product 2">
+                <img src="img\bag\black\eco-tote-bag-black-front-6763ff1723da8.jpg" alt="Black Product 3">
+                <div class="controls">
+                    <button class="prev" onclick="changeSlide(-1)">❮ Previous</button>
+                    <button class="next" onclick="changeSlide(1)">Next ❯</button>
+                </div>
+            </div>
+
+            <div class="slideshow" id="slideshow-oyster" style="display: none;">
+                <img src="img\bag\oyster\eco-tote-bag-oyster-front-6763ff172434c.jpg" alt="Black Product 1"
+                    class="active">
+                <img src="img\bag\oyster\eco-tote-bag-oyster-product-details-6763ff17242ae.jpg" alt="Black Product 2">
+                <img src="img\bag\oyster\eco-tote-bag-oyster-front-6763ff17241da.jpg" alt="Black Product 3">
+                <div class="controls">
+                    <button class="prev" onclick="changeSlide(-1)">❮ Previous</button>
+                    <button class="next" onclick="changeSlide(1)">Next ❯</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Rechte Spalte: Inhalt -->
+        <div class="content-container">
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laudantium earum doloribus possimus in qui
+                distinctio accusantium, tempore sunt sed consequatur molestias cupiditate illo sequi commodi numquam
+                porro
+                assumenda velit ullam.
+            </p>
+            <select id="color-select" name="color">
+                <option value="black" selected>Black</option>
+                <option value="oyster">Oyster</option>
+            </select>
+            <p><strong style="font-size: larger;">26$</strong></p>
+<button
+    id="orderBtn"
+    class="snipcart-add-item button"
+    data-item-id="4657823471"
+    data-item-price="26.00"
+    data-item-description="Eco-friendly tote bag, perfect for shopping or casual use."
+    data-item-image="img/bag/black/eco-tote-bag-black-front-6763ff172415c.jpg"
+    data-item-name="Eco Tote Bag | Black"
+    data-item-url="https://qwert3313.github.io/rundless.github.io/bag.html">
+    ADD TO CART
+</button>
+
+            <button id="orderBtn" style="margin-top: 20px; display: none;" class="snipcart-add-item button"
+                data-item-id="4657823472" data-item-price="26.00"
+                data-item-description="Eco-friendly tote bag, perfect for shopping or casual use."
+                data-item-image="img/bag/oyster/eco-tote-bag-oyster-front-6763ff172434c.jpg"
+                data-item-name="Eco Tote Bag | Oyster"
+                data-item-url="https://qwert3313.github.io/rundless.github.io/bag.html">
+                ADD TO CART
+            </button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const addToCartButton = document.getElementById("orderBtn");
+            const colorSelect = document.getElementById("color-select");
+            const slideshows = document.querySelectorAll(".slideshow");
+            let selectedColor = colorSelect.value; // Standardfarbe beim Laden
+            const colorToIdMap = {
+                black: 4657823471,
+                oyster: 4657823472,
+            };
+            let currentSlideIndex = 0;
+
+            // Standard: Schwarzes Produkt anzeigen
+            const defaultSlideshow = document.getElementById("slideshow-black");
+            if (defaultSlideshow) {
+                defaultSlideshow.style.display = "block";
+            }
+
+            // Event-Listener für Farbauswahl
+            colorSelect.addEventListener("change", (event) => {
+                selectedColor = event.target.value; // Hier wird selectedColor aktualisiert
+
+                // Alle Buttons ausblenden
+                const buttons = document.querySelectorAll(".snipcart-add-item");
+                buttons.forEach((button) => {
+                    button.style.display = "none";
+                });
+
+                // Button mit passendem data-item-id anzeigen
+                const activeButton = Array.from(buttons).find(
+                    (button) => button.getAttribute("data-item-id") === colorToIdMap[selectedColor].toString()
+                );
+                if (activeButton) {
+                    activeButton.style.display = "block";
+                }
+
+                // Alle Slideshows ausblenden
+                slideshows.forEach((slideshow) => {
+                    slideshow.style.display = "none";
+                });
+
+                // Passende Slideshow anzeigen
+                const activeSlideshow = document.getElementById(`slideshow-${selectedColor}`);
+                if (activeSlideshow) {
+                    activeSlideshow.style.display = "block";
+                    resetSlides(activeSlideshow); // Slides zurücksetzen
+                }
+            });
+
+            // Funktion zum Wechseln der Bilder
+            window.changeSlide = (direction) => {
+                const activeSlideshow = document.getElementById(`slideshow-${selectedColor}`);
+                if (!activeSlideshow) return;
+
+                const slides = activeSlideshow.querySelectorAll("img");
+                slides[currentSlideIndex].classList.remove("active");
+
+                currentSlideIndex = (currentSlideIndex + direction + slides.length) % slides.length;
+                slides[currentSlideIndex].classList.add("active");
+            };
+
+            // Zurücksetzen der Slides
+            function resetSlides(slideshow) {
+                const slides = slideshow.querySelectorAll("img");
+                slides.forEach((slide) => slide.classList.remove("active"));
+                slides[0].classList.add("active"); // Setze erstes Bild aktiv
+                currentSlideIndex = 0;
+            }
+        });
+    </script>
+</body>
+
+</html>

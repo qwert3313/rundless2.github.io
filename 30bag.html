@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eco Tote Bag</title>
+    <link rel="stylesheet" href="items.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Linke Spalte: Slideshow -->
+        <div class="image-container">
+            <h1>Eco Tote Bag</h1>
+            <div class="slideshow" id="slideshow-black" style="display: block;">
+                <img src="img\bag\black\eco-tote-bag-black-front-6763ff172415c.jpg" alt="Black Product 1"
+                    class="active">
+                <img src="img\bag\black\eco-tote-bag-black-product-details-6763ff17240cf.jpg" alt="Black Product 2">
+                <img src="img\bag\black\eco-tote-bag-black-front-6763ff1723da8.jpg" alt="Black Product 3">
+                <div class="controls">
+                    <button class="prev" onclick="changeSlide(-1)">❮ Previous</button>
+                    <button class="next" onclick="changeSlide(1)">Next ❯</button>
+                </div>
+            </div>
+
+            <div class="slideshow" id="slideshow-oyster" style="display: none;">
+                <img src="img\bag\oyster\eco-tote-bag-oyster-front-6763ff172434c.jpg" alt="Black Product 1"
+                    class="active">
+                <img src="img\bag\oyster\eco-tote-bag-oyster-product-details-6763ff17242ae.jpg" alt="Black Product 2">
+                <img src="img\bag\oyster\eco-tote-bag-oyster-front-6763ff17241da.jpg" alt="Black Product 3">
+                <div class="controls">
+                    <button class="prev" onclick="changeSlide(-1)">❮ Previous</button>
+                    <button class="next" onclick="changeSlide(1)">Next ❯</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Rechte Spalte: Inhalt -->
+        <div class="content-container">
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laudantium earum doloribus possimus in qui
+                distinctio accusantium, tempore sunt sed consequatur molestias cupiditate illo sequi commodi numquam
+                porro
+                assumenda velit ullam.
+            </p>
+            <select id="color-select" name="color">
+                <option value="black" selected>Black</option>
+                <option value="oyster">Oyster</option>
+            </select>
+            <p><strong style="font-size: larger;"><s>26€ </s>18,20€</strong></p>
+            <button class="button">ADD TO CART</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const colorSelect = document.getElementById("color-select");
+            const slideshows = document.querySelectorAll(".slideshow");
+            let currentSlideIndex = 0;
+
+            // Standard: Schwarzes Produkt anzeigen
+            const defaultSlideshow = document.getElementById("slideshow-black");
+            defaultSlideshow.style.display = "block";
+
+            colorSelect.addEventListener("change", (event) => {
+                const selectedColor = event.target.value;
+
+                // Alle Slideshows ausblenden
+                slideshows.forEach((slideshow) => {
+                    slideshow.style.display = "none";
+                });
+
+                // Passende Slideshow anzeigen
+                const activeSlideshow = document.getElementById(`slideshow-${selectedColor}`);
+                if (activeSlideshow) {
+                    activeSlideshow.style.display = "block";
+                    resetSlides(activeSlideshow);
+                }
+            });
+
+            // Funktion zum Wechseln der Bilder
+            window.changeSlide = (direction) => {
+                const activeSlideshow = document.querySelector(".slideshow[style='display: block;']");
+                if (!activeSlideshow) return;
+
+                const slides = activeSlideshow.querySelectorAll("img");
+                slides[currentSlideIndex].classList.remove("active");
+
+                currentSlideIndex = (currentSlideIndex + direction + slides.length) % slides.length;
+                slides[currentSlideIndex].classList.add("active");
+            };
+
+            // Zurücksetzen der Slides
+            function resetSlides(slideshow) {
+                const slides = slideshow.querySelectorAll("img");
+                slides.forEach((slide) => slide.classList.remove("active"));
+                slides[0].classList.add("active"); // Setze erstes Bild aktiv
+                currentSlideIndex = 0;
+            }
+        });
+    </script>
+</body>
+
+</html>

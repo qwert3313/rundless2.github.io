@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unisex pique polo shirt</title>
+    <link rel="stylesheet" href="items.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Linke Spalte: Slideshow -->
+        <div class="image-container">
+            <h1>Unisex pique polo shirt</h1>
+            <div class="slideshow" id="slideshow-black" style="display: block;">
+                <img src="img\polo\black\unisex-pique-polo-shirt-black-front-6764060d5eab4.jpg" alt="Black Product 1"
+                    class="active">
+                <img src="img\polo\black\unisex-pique-polo-shirt-black-back-6764060d5eb63.jpg" alt="Black Product 2">
+                <img src="img\polo\black\unisex-pique-polo-shirt-black-left-6764060d5ec0d.jpg" alt="Black Product 3">
+                <img src="img\polo\black\unisex-pique-polo-shirt-black-front-6764060d5e76d.jpg"
+                    alt="Black Product 4">
+                <div class="controls">
+                    <button class="prev" onclick="changeSlide(-1)">❮ Previous</button>
+                    <button class="next" onclick="changeSlide(1)">Next ❯</button>
+                </div>
+            </div>
+
+            <div class="slideshow" id="slideshow-navy" style="display: none;">
+                <img src="img\polo\navy\unisex-pique-polo-shirt-navy-front-6764060d5ecce.jpg" alt="White Product 1"
+                    class="active">
+                <img src="img\polo\navy\unisex-pique-polo-shirt-navy-back-6764060d5efe6.jpg" alt="White Product 2">
+                <img src="img\polo\navy\unisex-pique-polo-shirt-navy-left-6764060d5f156.jpg" alt="White Product 3">
+                <img src="img\polo\navy\unisex-pique-polo-shirt-navy-front-6764060d5ee6a.jpg"
+                    alt="White Product 4">
+                <div class="controls">
+                    <button class="prev" onclick="changeSlide(-1)">❮ Previous</button>
+                    <button class="next" onclick="changeSlide(1)">Next ❯</button>
+                </div>
+            </div>
+
+            <div class="slideshow" id="slideshow-white" style="display: none;">
+                <img src="img\polo\white\unisex-pique-polo-shirt-white-front-6764060d5f2d4.jpg" alt="Maroon Product 1"
+                    class="active">
+                <img src="img\polo\white\unisex-pique-polo-shirt-white-back-6764060d5f779.jpg" alt="Maroon Product 2">
+                <img src="img\polo\white\unisex-pique-polo-shirt-white-left-6764060d5f9a3.jpg" alt="Maroon Product 3">
+                <img src="img\polo\white\unisex-pique-polo-shirt-white-front-6764060d5f53a.jpg"
+                    alt="Maroon Product 4">
+                <div class="controls">
+                    <button class="prev" onclick="changeSlide(-1)">❮ Previous</button>
+                    <button class="next" onclick="changeSlide(1)">Next ❯</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Rechte Spalte: Inhalt -->
+        <div class="content-container">
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laudantium earum doloribus possimus in qui
+                distinctio accusantium, tempore sunt sed consequatur molestias cupiditate illo sequi commodi numquam
+                porro
+                assumenda velit ullam.</p>
+            <select name="size" id="size-select">
+                <option value="#" disabled selected>Size</option>
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+            </select>
+            <select name="color" id="color-select">
+                <option value="black" selected>Black</option>
+                <option value="navy">Navy</option>
+                <option value="white">White</option>
+            </select>
+            <p><strong style="font-size: larger;"><s>29€ </s>20,30€</strong></p>
+            <button class="button">ADD TO CART</button>
+        </div>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                const colorSelect = document.getElementById("color-select");
+                const slideshows = document.querySelectorAll(".slideshow");
+                let currentSlideIndex = 0;
+
+                // Standard: Schwarzes T-Shirt anzeigen
+                const defaultSlideshow = document.getElementById("slideshow-black");
+                defaultSlideshow.style.display = "block";
+
+                colorSelect.addEventListener("change", (event) => {
+                    const selectedColor = event.target.value;
+
+                    // Alle Slideshows ausblenden
+                    slideshows.forEach((slideshow) => {
+                        slideshow.style.display = "none";
+                    });
+
+                    // Passende Slideshow anzeigen
+                    const activeSlideshow = document.getElementById(`slideshow-${selectedColor}`);
+                    if (activeSlideshow) {
+                        activeSlideshow.style.display = "block";
+                        resetSlides(activeSlideshow);
+                    }
+                });
+
+                window.changeSlide = (direction) => {
+                    const activeSlideshow = document.querySelector(".slideshow[style='display: block;']");
+                    if (!activeSlideshow) return;
+
+                    const slides = activeSlideshow.querySelectorAll("img");
+                    slides[currentSlideIndex].classList.remove("active");
+
+                    currentSlideIndex = (currentSlideIndex + direction + slides.length) % slides.length;
+                    slides[currentSlideIndex].classList.add("active");
+                };
+
+                function resetSlides(slideshow) {
+                    const slides = slideshow.querySelectorAll("img");
+                    slides.forEach((slide) => slide.classList.remove("active"));
+                    slides[0].classList.add("active"); // Setze erstes Bild aktiv
+                    currentSlideIndex = 0;
+                }
+            });
+        </script>
+</body>
+
+</html>

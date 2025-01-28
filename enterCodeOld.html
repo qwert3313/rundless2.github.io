@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enter Code</title>
+    <link rel="stylesheet" href="enterCodeOld.css">
+</head>
+
+<body>
+
+    <h1>Enter your Code</h1>
+    
+    <!-- Das Formular sendet den Code an den Server -->
+    <form action="http://localhost:3000/check" method="post">
+        <!-- Der View/Hide-Button verwendet type="button", um das Absenden zu verhindern -->
+        <button id="button" type="button" onclick="changeType()">View</button>
+        
+        <!-- Das Eingabefeld für den Code -->
+        <input type="password" id="inputField" name="code" placeholder="Enter your Code" required>
+        
+        <!-- Der Submit-Button sendet das Formular an den Server -->
+        <button type="submit">Submit</button>
+    </form>
+
+    <footer>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms and Conditions</a>
+        <a href="#">Legal Notice</a>
+    </footer>
+
+    <script>
+        function changeType() {
+            var inputField = document.getElementById("inputField");
+            var button = document.getElementById("button");
+            
+            // Ändere den Typ des Eingabefeldes zwischen "password" und "text"
+            if (inputField.type === "password") {
+                inputField.type = "text";
+                button.textContent = "Hide";
+            } else {
+                inputField.type = "password";
+                button.textContent = "View";
+            }
+        }
+    </script>
+</body>
+</html>

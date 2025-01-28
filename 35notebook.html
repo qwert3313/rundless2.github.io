@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hardcover bound notebook</title>
+    <link rel="stylesheet" href="items.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Linke Spalte: Slideshow -->
+        <div class="image-container">
+            <h1>Hardcover bound notebook</h1>
+
+            <!-- Slideshow: Black -->
+            <div class="slideshow" id="slideshow-black" style="display: block;">
+                <img src="img\heft\black\hardcover-bound-notebook-black-front-6763c98518c8b.jpg" class="active">
+                <img src="img\heft\black\hardcover-bound-notebook-black-front-6763c98518cd2.jpg" alt="Black Beanie - Another View">
+                <img src="img\heft\black\hardcover-bound-notebook-black-front-6763c98518bff.jpg" alt="Black Beanie - Another View">
+                <div class="controls">
+                    <button class="prev" onclick="changeSlide(-1)">❮ Previous</button>
+                    <button class="next" onclick="changeSlide(1)">Next ❯</button>
+                </div>
+            </div>
+
+            <!-- Slideshow: Dark Green -->
+            <div class="slideshow" id="slideshow-navy" style="display: none;">
+                <img src="img\heft\navy\hardcover-bound-notebook-navy-front-6763c98518d19.jpg" alt="Dark Green Beanie - Front View" class="active">
+                <img src="img\heft\navy\hardcover-bound-notebook-navy-front-6763c98518d59.jpg" alt="Dark Green Beanie - Another View">
+                <img src="img\heft\navy\hardcover-bound-notebook-navy-front-6763c98518d9e.jpg" alt="Dark Green Beanie - Another View">
+                <div class="controls">
+                    <button class="prev" onclick="changeSlide(-1)">❮ Previous</button>
+                    <button class="next" onclick="changeSlide(1)">Next ❯</button>
+                </div>
+            </div>
+
+            <!-- Slideshow: Navy -->
+            <div class="slideshow" id="slideshow-silver" style="display: none;">
+                <img src="img\heft\silver\hardcover-bound-notebook-silver-front-6763c98518eca.jpg" alt="Navy Beanie - Front View" class="active">
+                <img src="img\heft\silver\hardcover-bound-notebook-silver-front-6763c98518f08.jpg" alt="Navy Beanie - Another View">
+                <img src="img\heft\silver\hardcover-bound-notebook-silver-front-6763c98518f4c.jpg" alt="Navy Beanie - Another View">
+                <div class="controls">
+                    <button class="prev" onclick="changeSlide(-1)">❮ Previous</button>
+                    <button class="next" onclick="changeSlide(1)">Next ❯</button>
+                </div>
+            </div>
+
+            <!-- Slideshow: White -->
+            <div class="slideshow" id="slideshow-turquoise" style="display: none;">
+                <img src="img\heft\turquoise\hardcover-bound-notebook-turquoise-front-6763c98518dea.jpg" alt="White Beanie - Front View" class="active">
+                <img src="img\heft\turquoise\hardcover-bound-notebook-turquoise-front-6763c98518e2f.jpg" alt="White Beanie - Another View">
+                <img src="img\heft\turquoise\hardcover-bound-notebook-turquoise-front-6763c98518e7a.jpg" alt="White Beanie - Another View">
+                <div class="controls">
+                    <button class="prev" onclick="changeSlide(-1)">❮ Previous</button>
+                    <button class="next" onclick="changeSlide(1)">Next ❯</button>
+                </div>
+            </div>
+
+            <!-- Slideshow: Gray -->
+            <div class="slideshow" id="slideshow-white" style="display: none;">
+                <img src="img\heft\white\hardcover-bound-notebook-white-front-6763c98518f96.jpg" alt="Gray Beanie - Front View" class="active">
+                <img src="img\heft\white\hardcover-bound-notebook-white-front-6763c98518fcf.jpg" alt="Gray Beanie - Another View">
+                <img src="img\heft\white\hardcover-bound-notebook-white-front-6763c9851900c.jpg" alt="Gray Beanie - Another View">
+                <div class="controls">
+                    <button class="prev" onclick="changeSlide(-1)">❮ Previous</button>
+                    <button class="next" onclick="changeSlide(1)">Next ❯</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Rechte Spalte: Inhalt -->
+        <div class="content-container">
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laudantium earum doloribus possimus in qui
+                distinctio accusantium, tempore sunt sed consequatur molestias cupiditate illo sequi commodi numquam
+                porro assumenda velit ullam.</p>
+
+            <!-- Color Selection -->
+            <select name="color" id="color-select">
+                <option value="black" selected>Black</option>
+                <option value="navy">Navy</option>
+                <option value="silver">Silver</option>
+                <option value="turquoise">Turquoise</option>
+                <option value="white">White</option>
+            </select>
+
+            <p><strong style="font-size: larger;"><s>22€ </s>14,30€</strong></p>
+            <button class="button">ADD TO CART</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const colorSelect = document.getElementById("color-select");
+            const slideshows = document.querySelectorAll(".slideshow");
+            let currentSlideIndex = 0;
+
+            // Standard: Schwarzes Produkt anzeigen
+            document.getElementById("slideshow-black").style.display = "block";
+
+            colorSelect.addEventListener("change", (event) => {
+                const selectedColor = event.target.value;
+
+                // Alle Slideshows ausblenden
+                slideshows.forEach((slideshow) => {
+                    slideshow.style.display = "none";
+                });
+
+                // Passende Slideshow anzeigen
+                const activeSlideshow = document.getElementById(`slideshow-${selectedColor}`);
+                if (activeSlideshow) {
+                    activeSlideshow.style.display = "block";
+                    resetSlides(activeSlideshow);
+                }
+            });
+
+            // Funktion zum Wechseln der Bilder
+            window.changeSlide = (direction) => {
+                const activeSlideshow = document.querySelector(".slideshow[style='display: block;']");
+                if (!activeSlideshow) return;
+
+                const slides = activeSlideshow.querySelectorAll("img");
+                slides[currentSlideIndex].classList.remove("active");
+
+                currentSlideIndex = (currentSlideIndex + direction + slides.length) % slides.length;
+                slides[currentSlideIndex].classList.add("active");
+            };
+
+            // Zurücksetzen der Slides
+            function resetSlides(slideshow) {
+                const slides = slideshow.querySelectorAll("img");
+                slides.forEach((slide) => slide.classList.remove("active"));
+                slides[0].classList.add("active"); // Setze erstes Bild aktiv
+                currentSlideIndex = 0;
+            }
+        });
+    </script>
+</body>
+
+</html>

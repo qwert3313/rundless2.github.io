@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trucker Cap</title>
+    <link rel="stylesheet" href="items.css">
+    <script src="https://cdn.snipcart.com/themes/v3.0.0/default/snipcart.js"></script>
+    <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.0.0/default/snipcart.css" />
+    <div id="snipcart" data-api-key="MjhjYTAzOTktMTgwNC00ZDdhLWJmNmYtOGRjOWVmMDAwNTE2NjM4NzAwNDk3MDU3MzI5MzE0"></div>
+</head>
+
+<body>
+    <button class="snipcart-checkout"
+        style="background-color: transparent; border: none; position: absolute; top: 20px; right: 50px; width: 5%; height: 5%; cursor: pointer;">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+            <path
+                d="M351.9 329.506H206.81l-3.072-12.56H368.16l26.63-116.019-217.23-26.04-9.952-58.09h-50.4v21.946h31.894l35.233 191.246a32.927 32.927 0 1 0 36.363 21.462h100.244a32.825 32.825 0 1 0 30.957-21.945zM181.427 197.45l186.51 22.358-17.258 75.195H198.917z"
+                data-name="Shopping Cart" />
+        </svg>
+        <nobr><span class="snipcart-total-price"></span>
+            (<span class="snipcart-items-count"></span>)
+    </button></nobr>
+    <div class="container">
+        <!-- Linke Spalte: Slideshow -->
+        <div class="image-container">
+            <h1>Trucker Cap</h1>
+            <div class="slideshow" id="slideshow-black" style="display: block;">
+                <img src="img\cap\black\5-panel-trucker-cap-black-left-front-6763388c8a60e.jpg" alt="Black Product 1"
+                    class="active">
+                <img src="img\cap\black\5-panel-trucker-cap-black-front-6763388c8a3ed.jpg" alt="Black Product 2">
+                <img src="img\cap\black\5-panel-trucker-cap-black-left-6763388c8a531.jpg" alt="Black Product 3">
+                <img src="img\cap\black\5-panel-trucker-cap-black-back-6763388c8a4b0.jpg" alt="Black Product 4">
+                <img src="img\cap\black\5-panel-trucker-cap-black-front-6763388c8a6d4.jpg" alt="Black Product 5">
+                <div class="controls">
+                    <button class="prev" onclick="changeSlide(-1)">❮ Previous</button>
+                    <button class="next" onclick="changeSlide(1)">Next ❯</button>
+                </div>
+            </div>
+
+            <div class="slideshow" id="slideshow-blackWhite" style="display: none;">
+                <img src="img\cap\blackwhite\5-panel-trucker-cap-black-white-left-front-6763388c8a328.jpg"
+                    alt="White Product 1" class="active">
+                <img src="img\cap\blackwhite\5-panel-trucker-cap-black-white-front-6763388c8a0e8.jpg"
+                    alt="White Product 2">
+                <img src="img\cap\blackwhite\5-panel-trucker-cap-black-white-left-6763388c8a24b.jpg"
+                    alt="White Product 3">
+                <img src="img\cap\blackwhite\5-panel-trucker-cap-black-white-back-6763388c8a1d4.jpg"
+                    alt="White Product 4">
+                <img src="img\cap\blackwhite\5-panel-trucker-cap-black-white-front-6763388c89926.jpg"
+                    alt="White Product 5">
+                <div class="controls">
+                    <button class="prev" onclick="changeSlide(-1)">❮ Previous</button>
+                    <button class="next" onclick="changeSlide(1)">Next ❯</button>
+                </div>
+            </div>
+
+            <div class="slideshow" id="slideshow-navy" style="display: none;">
+                <img src="img\cap\navy\5-panel-trucker-cap-navy-left-front-6763388c8a9a1.jpg" alt="Maroon Product 1"
+                    class="active">
+                <img src="img\cap\navy\5-panel-trucker-cap-navy-front-6763388c8a797.jpg" alt="Maroon Product 2">
+                <img src="img\cap\navy\5-panel-trucker-cap-navy-left-6763388c8a8ca.jpg" alt="Maroon Product 3">
+                <img src="img\cap\navy\5-panel-trucker-cap-navy-back-6763388c8a85b.jpg" alt="Maroon Product 4">
+                <img src="img\cap\navy\5-panel-trucker-cap-navy-front-6763388c8aa6c.jpg" alt="Maroon Product 5">
+                <div class="controls">
+                    <button class="prev" onclick="changeSlide(-1)">❮ Previous</button>
+                    <button class="next" onclick="changeSlide(1)">Next ❯</button>
+                </div>
+            </div>
+
+            <div class="slideshow" id="slideshow-navyWhite" style="display: none;">
+                <img src="img\cap\navywhite\5-panel-trucker-cap-navy-white-left-front-6763388c8ad3c.jpg"
+                    alt="Navy Product 1" class="active">
+                <img src="img\cap\navywhite\5-panel-trucker-cap-navy-white-front-6763388c8ab2f.jpg"
+                    alt="Navy Product 2">
+                <img src="img\cap\navywhite\5-panel-trucker-cap-navy-white-left-6763388c8ac64.jpg" alt="Navy Product 3">
+                <img src="img\cap\navywhite\5-panel-trucker-cap-navy-white-back-6763388c8abf3.jpg" alt="Navy Product 4">
+                <img src="img\cap\navywhite\5-panel-trucker-cap-navy-white-front-6763388c8adff.jpg"
+                    alt="Navy Product 5">
+                <div class="controls">
+                    <button class="prev" onclick="changeSlide(-1)">❮ Previous</button>
+                    <button class="next" onclick="changeSlide(1)">Next ❯</button>
+                </div>
+            </div>
+
+            <div class="slideshow" id="slideshow-white" style="display: none;">
+                <img src="img\cap\white\5-panel-trucker-cap-white-left-front-6763388c8b463.jpg" alt="Charcoal Product 1"
+                    class="active">
+                <img src="img\cap\white\5-panel-trucker-cap-white-front-6763388c8b25a.jpg" alt="Charcoal Product 2">
+                <img src="img\cap\white\5-panel-trucker-cap-white-left-6763388c8b38c.jpg" alt="Charcoal Product 3">
+                <img src="img\cap\white\5-panel-trucker-cap-white-back-6763388c8b31c.jpg" alt="Charcoal Product 4">
+                <img src="img\cap\white\5-panel-trucker-cap-white-front-6763388c8b535.jpg" alt="Charcoal Product 5">
+                <div class="controls">
+                    <button class="prev" onclick="changeSlide(-1)">❮ Previous</button>
+                    <button class="next" onclick="changeSlide(1)">Next ❯</button>
+                </div>
+            </div>
+
+            <div class="slideshow" id="slideshow-whiteBlack" style="display: none;">
+                <img src="img\cap\whiteblack\5-panel-trucker-cap-black-white-black-left-front-6763388c8b0d4.jpg"
+                    alt="Military Green Product 1" class="active">
+                <img src="img\cap\whiteblack\5-panel-trucker-cap-black-white-black-front-6763388c8aec1.jpg"
+                    alt="Military Green Product 2">
+                <img src="img\cap\whiteblack\5-panel-trucker-cap-black-white-black-left-6763388c8affa.jpg"
+                    alt="Military Green Product 3">
+                <img src="img\cap\whiteblack\5-panel-trucker-cap-black-white-black-back-6763388c8af89.jpg"
+                    alt="Military Green Product 4">
+                <img src="img\cap\whiteblack\5-panel-trucker-cap-black-white-black-front-6763388c8b198.jpg"
+                    alt="Military Green Product 5">
+                <div class="controls">
+                    <button class="prev" onclick="changeSlide(-1)">❮ Previous</button>
+                    <button class="next" onclick="changeSlide(1)">Next ❯</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Rechte Spalte: Inhalt -->
+        <div class="content-container">
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laudantium earum doloribus possimus in qui
+                distinctio accusantium, tempore sunt sed consequatur molestias cupiditate illo sequi commodi numquam
+                porro
+                assumenda velit ullam.</p>
+            <select name="color" id="color-select">
+                <option value="black" selected>Black</option>
+                <option value="blackWhite">Black/White</option>
+                <option value="navy">Navy</option>
+                <option value="navyWhite">Navy/White</option>
+                <option value="white">White</option>
+                <option value="whiteBlack">White/Black</option>
+            </select>
+
+            <p><strong style="font-size: larger;">29€</strong></p>
+            <button class="snipcart-add-item button"         style="margin-top: 20px; display: block;" 
+ data-item-id="4657791814" data-item-price="29.00"
+                data-item-description="Size-adjustable, air-permeable high-quality cap"
+                data-item-image="img/cap/black/5-panel-trucker-cap-black-left-front-6763388c8a60e.jpg"
+                data-item-name="Trucker Cap - Black"
+                data-item-url="https://qwert3313.github.io/rundless.github.io/cap.html">
+                ADD TO CART
+            </button>
+
+            <button class="snipcart-add-item button"         style="margin-top: 20px; display: none;" 
+ data-item-id="4657791813" data-item-price="29.00"
+                data-item-description="Size-adjustable, air-permeable high-quality cap"
+                data-item-image="img/cap/blackwhite/5-panel-trucker-cap-black-white-left-front-6763388c8a328.jpg"
+                data-item-name="Trucker Cap - Black/White"
+                data-item-url="https://qwert3313.github.io/rundless.github.io/cap.html">
+                ADD TO CART
+            </button>
+
+            <button class="snipcart-add-item button"         style="margin-top: 20px; display: none;" 
+ data-item-id="4657791815" data-item-price="29.00"
+                data-item-description="Size-adjustable, air-permeable high-quality cap"
+                data-item-image="img/cap/navy/5-panel-trucker-cap-navy-left-front-6763388c8a9a1.jpg"
+                data-item-name="Trucker Cap - Navy"
+                data-item-url="https://qwert3313.github.io/rundless.github.io/cap.html">
+                ADD TO CART            
+            </button>
+
+            <button class="snipcart-add-item button"         style="margin-top: 20px; display: none;" 
+ data-item-id="4657791816" data-item-price="29.00"
+                data-item-description="Size-adjustable, air-permeable high-quality cap"
+                data-item-image="img/cap/navywhite/5-panel-trucker-cap-navy-white-left-front-6763388c8ad3c.jpg"
+                data-item-name="Trucker Cap - Navy/White"
+                data-item-url="https://qwert3313.github.io/rundless.github.io/cap.html">
+                ADD TO CART
+            </button>
+
+            <button class="snipcart-add-item button"         style="margin-top: 20px; display: none;" 
+ data-item-id="4657791825" data-item-price="29.00"
+                data-item-description="Size-adjustable, air-permeable high-quality cap"
+                data-item-image="img/cap/white/5-panel-trucker-cap-white-left-front-6763388c8b463.jpg"
+                data-item-name="Trucker Cap - White"
+                data-item-url="https://qwert3313.github.io/rundless.github.io/cap.html">
+                ADD TO CART
+            </button>
+
+            <button class="snipcart-add-item button"         style="margin-top: 20px; display: none;" 
+ data-item-id="4657791820" data-item-price="29.00"
+                data-item-description="Size-adjustable, air-permeable high-quality cap"
+                data-item-image="img/cap/whiteblack/5-panel-trucker-cap-black-white-black-left-front-6763388c8b0d4.jpg"
+                data-item-name="Trucker Cap - White/Black"
+                data-item-url="https://qwert3313.github.io/rundless.github.io/cap.html">
+                ADD TO CART
+            </button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const addToCartButton = document.getElementById("orderBtn");
+            const colorSelect = document.getElementById("color-select");
+            const slideshows = document.querySelectorAll(".slideshow");
+            let selectedColor = colorSelect.value; // Standardfarbe beim Laden
+            const colorToIdMap = {
+                black: 4657791814,
+                blackWhite: 4657791813,
+                navy: 4657791815,
+                white: 4657791825,
+                navyWhite: 4657791816,
+                whiteBlack: 4657791820,
+            };
+            let currentSlideIndex = 0;
+
+            // Standard: Schwarzes Produkt anzeigen
+            const defaultSlideshow = document.getElementById("slideshow-black");
+            if (defaultSlideshow) {
+                defaultSlideshow.style.display = "block";
+            }
+
+            // Event-Listener für Farbauswahl
+colorSelect.addEventListener("change", (event) => {
+    selectedColor = event.target.value; // Hier wird selectedColor aktualisiert
+
+    // Alle Buttons ausblenden
+    const buttons = document.querySelectorAll(".snipcart-add-item");
+    buttons.forEach((button) => {
+        button.style.display = "none";
+    });
+
+    // Button mit passendem data-item-id anzeigen
+    const activeButton = Array.from(buttons).find(
+        (button) => button.getAttribute("data-item-id") === colorToIdMap[selectedColor].toString()
+    );
+    if (activeButton) {
+        activeButton.style.display = "block";
+    }
+
+    // Alle Slideshows ausblenden
+    slideshows.forEach((slideshow) => {
+        slideshow.style.display = "none";
+    });
+
+    // Passende Slideshow anzeigen
+    const activeSlideshow = document.getElementById(`slideshow-${selectedColor}`);
+    if (activeSlideshow) {
+        activeSlideshow.style.display = "block";
+        resetSlides(activeSlideshow); // Slides zurücksetzen
+    }
+});
+
+            // Funktion zum Wechseln der Bilder
+            window.changeSlide = (direction) => {
+                const activeSlideshow = document.getElementById(`slideshow-${selectedColor}`);
+                if (!activeSlideshow) return;
+
+                const slides = activeSlideshow.querySelectorAll("img");
+                slides[currentSlideIndex].classList.remove("active");
+
+                currentSlideIndex = (currentSlideIndex + direction + slides.length) % slides.length;
+                slides[currentSlideIndex].classList.add("active");
+            };
+
+            // Zurücksetzen der Slides
+            function resetSlides(slideshow) {
+                const slides = slideshow.querySelectorAll("img");
+                slides.forEach((slide) => slide.classList.remove("active"));
+                slides[0].classList.add("active"); // Setze erstes Bild aktiv
+                currentSlideIndex = 0;
+            }
+        });
+
+    </script>
+</body>
+
+</html>
