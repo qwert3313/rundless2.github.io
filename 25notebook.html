@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Unisex pique polo shirt</title>
+    <title>Hardcover bound notebook</title>
     <link rel="stylesheet" href="items.css">
     <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.4.0/default/snipcart.css" />
     <script src="https://cdn.snipcart.com/themes/v3.4.0/default/snipcart.js"></script>
@@ -77,9 +77,10 @@
     </nav>
     <h1 id="heading">Hardcover bound notebook</h1>
 
-    <div class="container">
+  <div class="container">
         <!-- Linke Spalte: Slideshow -->
         <div class="image-container">
+
             <!-- Slideshow: Black -->
             <div class="slideshow" id="slideshow-black" style="display: block;">
                 <img src="img\heft\black\hardcover-bound-notebook-black-front-6763c98518c8b.jpg" class="active">
@@ -165,11 +166,51 @@
                 <option value="white">White</option>
             </select>
             <form action="https://gamebackend-nfw1.onrender.com/check" method="post" id="code-form">
-                <button id="button" type="button" onclick="changeType()" class="button">View</button>
-                <input type="password" id="inputField" name="code" placeholder="Enter your Code" required>
-                <button class="button" type="submit">CHECK CODE</button>
+                <div style="display: flex; align-items: center; justify-content: center; gap: 10px;">
+                    <input type="password" id="inputField" name="code" placeholder="Enter your Code" required>
+                    <button onclick="changeType()" type="button"
+                        style="border: none; background-color: transparent; cursor: pointer; background-color: black; border-radius: 20%;">
+                        <svg style="display: none;" id="view" width="32px" height="32px" viewBox="-2.4 -2.4 28.80 28.80"
+                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g id="SVGRepo_bgCarrier" stroke-width="0">
+                                <rect x="-2.4" y="-2.4" width="28.80" height="28.80" rx="5" fill="#000000"
+                                    strokewidth="0"></rect>
+                            </g>
+                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                            <g id="SVGRepo_iconCarrier">
+                                <g id="Edit / Hide">
+                                    <path id="Vector"
+                                        d="M3.99989 4L19.9999 20M16.4999 16.7559C15.1473 17.4845 13.6185 17.9999 11.9999 17.9999C8.46924 17.9999 5.36624 15.5478 3.5868 13.7788C3.1171 13.3119 2.88229 13.0784 2.7328 12.6201C2.62619 12.2933 2.62616 11.7066 2.7328 11.3797C2.88233 10.9215 3.11763 10.6875 3.58827 10.2197C4.48515 9.32821 5.71801 8.26359 7.17219 7.42676M19.4999 14.6335C19.8329 14.3405 20.138 14.0523 20.4117 13.7803L20.4146 13.7772C20.8832 13.3114 21.1182 13.0779 21.2674 12.6206C21.374 12.2938 21.3738 11.7068 21.2672 11.38C21.1178 10.9219 20.8827 10.6877 20.4133 10.2211C18.6338 8.45208 15.5305 6 11.9999 6C11.6624 6 11.3288 6.02241 10.9999 6.06448M13.3228 13.5C12.9702 13.8112 12.5071 14 11.9999 14C10.8953 14 9.99989 13.1046 9.99989 12C9.99989 11.4605 10.2135 10.9711 10.5608 10.6113"
+                                        stroke="#ffffff" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round"></path>
+                                </g>
+                            </g>
+                        </svg>
+                        <svg style="display: inline;" id="hide" width="32px" height="32px"
+                            viewBox="-2.4 -2.4 28.80 28.80" fill="none" xmlns="http://www.w3.org/2000/svg"
+                            stroke="#ffffff" stroke-width="0.00024000000000000003">
+                            <g id="SVGRepo_bgCarrier" stroke-width="0">
+                                <rect x="-2.4" y="-2.4" width="28.80" height="28.80" rx="5" fill="#000000"
+                                    strokewidth="0"></rect>
+                            </g>
+                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                            <g id="SVGRepo_iconCarrier">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9ZM11 12C11 11.4477 11.4477 11 12 11C12.5523 11 13 11.4477 13 12C13 12.5523 12.5523 13 12 13C11.4477 13 11 12.5523 11 12Z"
+                                    fill="#ffffff"></path>
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M21.83 11.2807C19.542 7.15186 15.8122 5 12 5C8.18777 5 4.45796 7.15186 2.17003 11.2807C1.94637 11.6844 1.94361 12.1821 2.16029 12.5876C4.41183 16.8013 8.1628 19 12 19C15.8372 19 19.5882 16.8013 21.8397 12.5876C22.0564 12.1821 22.0536 11.6844 21.83 11.2807ZM12 17C9.06097 17 6.04052 15.3724 4.09173 11.9487C6.06862 8.59614 9.07319 7 12 7C14.9268 7 17.9314 8.59614 19.9083 11.9487C17.9595 15.3724 14.939 17 12 17Z"
+                                    fill="#ffffff"></path>
+                            </g>
+                        </svg>
+                    </button>
+                </div>
+                <button type="submit" class="button">CHECK CODE</button>
+                <em id="infoText" style="font-size: 12px; display: none;">The checking process can take up to two
+                    minutes. Please be patient</em>
+                <div id="loader" class="hidden"></div>
             </form>
-            <p><strong style="font-size: larger;"><s>22$</s> 16.50$</strong></p>
+              <p><strong style="font-size: larger;"><s>22$</s> 16.50$</strong></p>
 <button id="orderBtn" style="margin-top: 20px; display: none;" class="snipcart-add-item button"
                 data-item-id="4657806574" data-item-price="16.50"
                 data-item-description="Hardcover bound notebook for school, work and more"
